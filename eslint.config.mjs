@@ -66,6 +66,7 @@ const config = [
       'no-undef': 'off',
     },
   },
+  ...compat.plugins('import', 'promise', 'n'),
 ]
 
 export default config
