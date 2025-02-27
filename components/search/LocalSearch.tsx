@@ -4,9 +4,9 @@ import Image from 'next/image'
 import { usePathname, useRouter, useSearchParams } from 'next/navigation'
 import { useEffect, useState } from 'react'
 
-import { Input } from '../ui/input'
-
 import { formUrlQuery, removeKeysFromUrlQuery } from '@/lib/url'
+
+import { Input } from '../ui/input'
 
 interface Props {
   route: string
@@ -52,15 +52,17 @@ const LocalSearch = ({ route, imgSrc, placeholder, otherClasses }: Props) => {
     <div
       className={`background-light800_darkgradient flex min-h-[56px] grow items-center gap-4 rounded-[10px] px-4 ${otherClasses}`}
     >
-      <Image
-        src={imgSrc}
-        alt="Search"
-        width={24}
-        height={24}
-        className="cursor-pointer"
-      />
-
+      <label htmlFor="search">
+        <Image
+          src={imgSrc}
+          alt="search icon"
+          width={24}
+          height={24}
+          className="cursor-pointer"
+        />
+      </label>
       <Input
+        id="search"
         type="text"
         placeholder={placeholder}
         value={searchQuery}
